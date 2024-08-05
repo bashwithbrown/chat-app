@@ -33,7 +33,7 @@ The **Flask Chat App** is a real-time chat application built using Flask. It sup
 2. **Run the setup script in scripts directory to create a virtual environment and install dependencies:**
 
    ```bash
-   ./setup-venv.sh
+   ./scripts/setup-venv.sh
    ```
 
 3. **Create your own secrect key using uuid in python for your .env file:**
@@ -44,7 +44,7 @@ The **Flask Chat App** is a real-time chat application built using Flask. It sup
 
 ### Configuration
 
-Update the `config.py` file with your database and application settings. It can run on default settings.
+Update the `config.py` file with your database and application settings. The code will run out of the box on default settings.
 
 ## Running the Application
 
@@ -73,13 +73,13 @@ Update the `config.py` file with your database and application settings. It can 
 2. **Run the Gunicorn server:**
 
    ```bash
-   ./run.sh
+   ./scripts/run.sh
    ```
 
    **For background execution:**
 
    ```bash
-   ./run.sh -d
+   ./scripts/run.sh -d
    ```
 
 ## Project Structure
