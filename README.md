@@ -26,19 +26,25 @@ The **Flask Chat App** is a real-time chat application built using Flask. It sup
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-repo/flask-chat-app.git
-   cd flask-chat-app
+   git clone git@github.com:dandyDev-1/chat-app.git
+   cd chat-app
    ```
 
-2. **Run the setup script to create a virtual environment and install dependencies:**
+2. **Run the setup script in scripts directory to create a virtual environment and install dependencies:**
 
    ```bash
-   ./setup.sh
+   ./setup-venv.sh
+   ```
+
+3. **Create your own secrect key using uuid in python for your .env file:**
+
+   ```python
+   uuid.uuid4()
    ```
 
 ### Configuration
 
-Update the `config.py` file with your database and application settings.
+Update the `config.py` file with your database and application settings. It can run on default settings.
 
 ## Running the Application
 
@@ -79,33 +85,80 @@ Update the `config.py` file with your database and application settings.
 ## Project Structure
 
 ```
-flask-chat-app/
-├── website/
-│   ├── static/
-│   ├── templates/
-│   ├── __init__.py
-│   ├── chat.py
-│   ├── api.py
-│   ├── config.py
-│   ├── database.py
-│   ├── functions.py
-│   └── wsgi.py
-├── setup.sh
-├── run.sh
-└── requirements.txt
+.
+├── LICENSE
+├── README.md
+├── scripts
+│   ├── run.sh
+│   └── setup-venv.sh
+└── website
+    ├── app.py
+    ├── core
+    │   ├── config.py
+    │   └── __init__.py
+    ├── database
+    │   ├── db_manager.py
+    │   ├── __init__.py
+    │   ├── logs
+    │   └── models
+    │       ├── __init__.py
+    │       └── sqlalchemy_models.py
+    ├── functions
+    │   ├── __init__.py
+    │   ├── logger
+    │   │   ├── __init__.py
+    │   │   └── logger.py
+    │   └── tools
+    │       ├── __init__.py
+    │       └── utilites.py
+    ├── requirements.txt
+    ├── routes
+    │   ├── admin.py
+    │   ├── api.py
+    │   ├── auth.py
+    │   ├── chat.py
+    │   ├── __init__.py
+    │   ├── main.py
+    │   └── user.py
+    ├── static
+    │   ├── css
+    │   │   └── styles.css
+    │   ├── file_upload
+    │   ├── ico
+    │   ├── images
+    │   └── js
+    │       └── script.js
+    ├── templates
+    │   ├── 404.html
+    │   ├── admin
+    │   │   ├── admin.html
+    │   │   └── settings.html
+    │   ├── auth
+    │   │   ├── login.html
+    │   │   ├── reset-password.html
+    │   │   └── signup.html
+    │   ├── base.html
+    │   ├── chat
+    │   │   ├── chat.html
+    │   │   └── room-detailed.html
+    │   ├── main
+    │   │   └── home.html
+    │   ├── navbar.html
+    │   └── user
+    │       └── profile.html
+    └── wsgi.py
 ```
 
 - **`website/static/`**: Static files (CSS, JavaScript, images).
 - **`website/templates/`**: HTML templates.
-- **`website/__init__.py`**: Initializes the Flask application.
-- **`website/chat.py`**: Chat-related routes.
-- **`website/api.py`**: API endpoints.
+- **`website/routes/chat.py`**: Chat-related routes.
+- **`website/routes/api.py`**: API endpoints.
 - **`website/config.py`**: Configuration settings.
-- **`website/database.py`**: Database models and manager.
-- **`website/functions.py`**: Utility functions.
+- **`website/database/db_manager.py`**: Database models and manager.
+- **`website/functions`**: Utility functions.
 - **`website/wsgi.py`**: WSGI entry point for Gunicorn.
-- **`setup.sh`**: Script to set up the environment.
-- **`run.sh`**: Script to run the application.
+- **`scripts/setup-venv.sh`**: Script to set up the environment.
+- **`scripts/run.sh`**: Script to run the application.
 - **`requirements.txt`**: Python dependencies.
 
 ## Routes
