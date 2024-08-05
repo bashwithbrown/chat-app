@@ -11,10 +11,6 @@ class DatabaseManager(object):
         )
 
         self.User = User
-        self.Contact = Contact
-        self.Contract = Contract
-        self.Task = Task
-        self.ContactMessage = ContactMessage
         self.ChatMessage = ChatMessage
         self.ChatRoom = ChatRoom
         
