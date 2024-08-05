@@ -1,1 +1,1 @@
-from .sqlalchemy_models import Base, User, Contact, ContactMessage, ChatMessage, ChatRoom, Contract, Task
+from .sqlalchemy_models import Base, User, ChatMessage, ChatRoom
